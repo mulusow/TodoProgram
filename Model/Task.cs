@@ -21,7 +21,7 @@ public class TodoTask
 
     public override string ToString()
     {
-        return $"{Id}. {Title} - {Description} - {(IsCompleted ? "Completed" : "Not Completed")} - {CreatedDate}";
+        return $"ID: {Id}\nTitle: {Title}\nDescription: {Description}\nStatus: {(IsCompleted ? "Completed" : "Not Completed")}\nCreated: {CreatedDate}";
     }
 
 }

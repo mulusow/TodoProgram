@@ -52,13 +52,23 @@ public static class TodoManger
         }
     }
 
-    public static TodoTask GetTask(int id)
+    public static TodoTask GetTask(int i)
     {
         if (Tasks is null || Tasks.Count == 0)
         {
             return null!;
         }
 
-        return Tasks[id - 1];
+        for (int index = 0; index < TodoManger.Tasks.Count; index++)
+        {
+            if (index == i)
+            {
+                return TodoManger.Tasks[index];
+            }
+        }
+
+        return null;
+
+
     }
 }

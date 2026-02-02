@@ -59,7 +59,7 @@ public static class TodoScreen
         Console.Write("Title: ");
         string Title = Console.ReadLine()!.Trim();
 
-        if (Title is null || Title == " ")
+        while (Title == "")
         {
             Console.WriteLine("Input cannot be Null. Try again");
             Title = Console.ReadLine()!.Trim();
@@ -68,7 +68,7 @@ public static class TodoScreen
         Console.Write("Description: ");
         string Description = Console.ReadLine()!.Trim();
 
-        if (Description is null || Description == " ")
+        while (Description == "")
         {
             Console.WriteLine("Input cannot be Null. Try again");
             Description = Console.ReadLine()!.Trim();
@@ -142,6 +142,7 @@ public static class TodoScreen
             return;
         }
 
+        Console.Clear();
         Console.WriteLine(Task.ToString());
         Console.ReadLine();
         return;
@@ -149,25 +150,30 @@ public static class TodoScreen
 
     public static void ListTaks()
     {
-        foreach (TodoTask task in TodoManger.Tasks)
+        if (TodoManger.Tasks.Count == 0)
         {
-            Console.WriteLine($"{task.Id}. {task.Title}");
+            Console.WriteLine("No Tasks Found. Create one at 'Add Task'");
+        }
+
+        for (int index = 0; index < TodoManger.Tasks.Count; index++)
+        {
+            Console.WriteLine($"{index + 1}. {TodoManger.Tasks[index].Title}");
         }
     }
 
     public static TodoTask SelectTask()
     {
-        Console.WriteLine("Input Task ID: ");
+        Console.WriteLine("Input Task: ");
         string choice = Console.ReadLine()!.Trim();
-        int taskId;
+        int index;
 
-        if (!int.TryParse(choice, out taskId))
+        while (!int.TryParse(choice, out index))
         {
             Console.WriteLine("Invalid Input. Try Again");
             choice = Console.ReadLine()!.Trim();
         }
 
-        TodoTask Task = TodoManger.GetTask(taskId);
+        TodoTask Task = TodoManger.GetTask(index - 1);
 
         return Task;
     }
