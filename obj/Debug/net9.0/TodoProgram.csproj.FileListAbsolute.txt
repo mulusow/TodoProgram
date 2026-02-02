@@ -3,3 +3,13 @@ C:\Users\mootj\Desktop\TodoProgram\obj\Debug\net9.0\TodoProgram.AssemblyInfoInpu
 C:\Users\mootj\Desktop\TodoProgram\obj\Debug\net9.0\TodoProgram.AssemblyInfo.cs
 C:\Users\mootj\Desktop\TodoProgram\obj\Debug\net9.0\TodoProgram.csproj.CoreCompileInputs.cache
 C:\Users\mootj\Desktop\TodoProgram\obj\Debug\net9.0\TodoProgram.sourcelink.json
+C:\Users\mootj\Desktop\TodoProgram\bin\Debug\net9.0\TodoProgram.exe
+C:\Users\mootj\Desktop\TodoProgram\bin\Debug\net9.0\TodoProgram.deps.json
+C:\Users\mootj\Desktop\TodoProgram\bin\Debug\net9.0\TodoProgram.runtimeconfig.json
+C:\Users\mootj\Desktop\TodoProgram\bin\Debug\net9.0\TodoProgram.dll
+C:\Users\mootj\Desktop\TodoProgram\bin\Debug\net9.0\TodoProgram.pdb
+C:\Users\mootj\Desktop\TodoProgram\obj\Debug\net9.0\TodoProgram.dll
+C:\Users\mootj\Desktop\TodoProgram\obj\Debug\net9.0\refint\TodoProgram.dll
+C:\Users\mootj\Desktop\TodoProgram\obj\Debug\net9.0\TodoProgram.pdb
+C:\Users\mootj\Desktop\TodoProgram\obj\Debug\net9.0\TodoProgram.genruntimeconfig.cache
+C:\Users\mootj\Desktop\TodoProgram\obj\Debug\net9.0\ref\TodoProgram.dll

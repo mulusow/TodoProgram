@@ -2,24 +2,27 @@ public static class TodoScreen
 {
     public static void Start()
     {
-        Console.WriteLine("=== Todo List ===");
-        Console.WriteLine("1. Add Task");
-        Console.WriteLine("2. View Tasks");
-        Console.WriteLine("3. Complete Task");
-        Console.WriteLine("4. Delete Task");
-        Console.WriteLine("5. Exit");
-
-        string userInput = Console.ReadLine()!.Trim();
-        int choice;
-
-        if (!int.TryParse(userInput, out choice))
-        {
-            Console.WriteLine("Invalid Input. Try Again");
-            userInput = Console.ReadLine()!.Trim();
-        }
+        int choice = 0;
 
         while (choice != 5)
         {
+            Console.Clear();
+            Console.WriteLine("=== Todo List ===");
+            Console.WriteLine("1. Add Task");
+            Console.WriteLine("2. View Tasks");
+            Console.WriteLine("3. Complete Task");
+            Console.WriteLine("4. Delete Task");
+            Console.WriteLine("5. Exit");
+
+            string userInput = Console.ReadLine()!.Trim();
+
+            if (!int.TryParse(userInput, out choice))
+            {
+                Console.WriteLine("Invalid Input. Try Again");
+                Console.ReadLine();
+                continue;
+            }
+
             switch (choice)
             {
                 case 1:
@@ -42,9 +45,14 @@ public static class TodoScreen
 
     public static void AddTask()
     {
+        Console.Clear();
+
         TodoTask Task = CreateTask();
         TodoManger.AddTask(Task);
+        Console.WriteLine("Succesfully Added Task");
+        Console.ReadLine();
 
+        return;
     }
     public static TodoTask CreateTask()
     {
@@ -76,17 +84,36 @@ public static class TodoScreen
 
     public static void CompleteTask()
     {
+        Console.Clear();
+
         ListTaks();
         TodoTask Task = SelectTask();
 
+        if (Task is null)
+        {
+            Console.WriteLine("No Tasks");
+            Console.ReadLine();
+            return;
+        }
+
         TodoManger.CompleteTask(Task);
+        Console.WriteLine("Succesfully Completed Task");
         return;
 
     }
     public static void RemoveTask()
     {
+        Console.Clear();
+
         ListTaks();
         TodoTask Task = SelectTask();
+
+        if (Task is null)
+        {
+            Console.WriteLine("No Tasks");
+            Console.ReadLine();
+            return;
+        }
 
         if (TodoManger.RemoveTask(Task))
         {
@@ -103,8 +130,17 @@ public static class TodoScreen
     }
     public static void ViewTask()
     {
+        Console.Clear();
+
         ListTaks();
         TodoTask Task = SelectTask();
+
+        if (Task is null)
+        {
+            Console.WriteLine("No Tasks");
+            Console.ReadLine();
+            return;
+        }
 
         Console.WriteLine(Task.ToString());
         Console.ReadLine();

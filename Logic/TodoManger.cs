@@ -59,6 +59,6 @@ public static class TodoManger
             return null!;
         }
 
-        return Tasks[id];
+        return Tasks[id - 1];
     }
 }
