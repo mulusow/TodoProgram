@@ -1,0 +1,5 @@
+C:\Users\mootj\Desktop\TodoProgram\obj\Debug\net9.0\TodoProgram.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mootj\Desktop\TodoProgram\obj\Debug\net9.0\TodoProgram.AssemblyInfoInputs.cache
+C:\Users\mootj\Desktop\TodoProgram\obj\Debug\net9.0\TodoProgram.AssemblyInfo.cs
+C:\Users\mootj\Desktop\TodoProgram\obj\Debug\net9.0\TodoProgram.csproj.CoreCompileInputs.cache
+C:\Users\mootj\Desktop\TodoProgram\obj\Debug\net9.0\TodoProgram.sourcelink.json

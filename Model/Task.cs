@@ -1,4 +1,4 @@
-public class Task
+public class TodoTask
 {
     public int Id { get; set; }
     public string Title { get; set; }
@@ -6,7 +6,7 @@ public class Task
     public bool IsCompleted { get; set; }
     public string CreatedDate { get; set; }
 
-    public Task(string title, string description, bool isCompleted, string createdDate)
+    public TodoTask(string title, string description, bool isCompleted, string createdDate)
     {
         Title = title;
         Description = description;
@@ -14,9 +14,14 @@ public class Task
         CreatedDate = createdDate;
     }
 
-    public Task(int id, string title, string description, bool isCompleted, string createdDate) : this(title, description, isCompleted, createdDate)
+    public TodoTask(int id, string title, string description, bool isCompleted, string createdDate) : this(title, description, isCompleted, createdDate)
     {
         Id = id;
+    }
+
+    public override string ToString()
+    {
+        return $"{Id}. {Title} - {Description} - {(IsCompleted ? "Completed" : "Not Completed")} - {CreatedDate}";
     }
 
 }

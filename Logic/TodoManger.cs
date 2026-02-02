@@ -1,21 +1,21 @@
 public static class TodoManger
 {
-    public static List<Task> Tasks = new();
+    public static List<TodoTask> Tasks = new();
 
-    public static Task CreatingTask(string title, string description, bool isCompleted, DateTime createdDate)
+    public static TodoTask CreatingTask(string title, string description, bool isCompleted, DateTime createdDate)
     {
         int Id = Tasks.Count + 1;
         string Date = createdDate.ToString("dd/mm/yyyy");
-        Task Task = new(Id, title, description, isCompleted, Date);
+        TodoTask Task = new(Id, title, description, isCompleted, Date);
         return Task;
 
     }
-    public static void AddTask(Task task)
+    public static void AddTask(TodoTask task)
     {
         Tasks.Add(task);
     }
 
-    public static bool RemoveTask(Task task)
+    public static bool RemoveTask(TodoTask task)
     {
         if (Tasks is null || Tasks.Count == 0)
         {
@@ -31,7 +31,7 @@ public static class TodoManger
         return true;
     }
 
-    public static void CompleteTask(Task task)
+    public static void CompleteTask(TodoTask task)
     {
         if (!Tasks.Contains(task))
         {
@@ -43,7 +43,7 @@ public static class TodoManger
             return;
         }
 
-        foreach (Task t in Tasks)
+        foreach (TodoTask t in Tasks)
         {
             if (t.Id == task.Id)
             {
@@ -52,8 +52,13 @@ public static class TodoManger
         }
     }
 
-    public static Task GetTask(int id)
+    public static TodoTask GetTask(int id)
     {
+        if (Tasks is null || Tasks.Count == 0)
+        {
+            return null!;
+        }
+
         return Tasks[id];
     }
 }
