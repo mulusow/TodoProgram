@@ -68,7 +68,17 @@ public static class TodoManger
         }
 
         return null;
+    }
 
+    public static string[] CreateTaskArray()
+    {
+        string[] TaskOptions = new string[TodoManger.Tasks.Count];
 
+        for (int index = 0; index < TodoManger.Tasks.Count; index++)
+        {
+            TaskOptions[index] = TodoManger.Tasks[index].Title;
+        }
+
+        return TaskOptions;
     }
 }

@@ -2,45 +2,71 @@ public static class TodoScreen
 {
     public static void Start()
     {
-        int choice = 0;
+        // int choice = 0;
 
-        while (choice != 5)
+        // while (choice != 5)
+        // {
+        //     Console.Clear();
+        //     Console.WriteLine("=== Todo List ===");
+        //     Console.WriteLine("1. Add Task");
+        //     Console.WriteLine("2. View Tasks");
+        //     Console.WriteLine("3. Complete Task");
+        //     Console.WriteLine("4. Delete Task");
+        //     Console.WriteLine("5. Exit");
+
+        //     string userInput = Console.ReadLine()!.Trim();
+
+        //     if (!int.TryParse(userInput, out choice))
+        //     {
+        //         Console.WriteLine("Invalid Input. Try Again");
+        //         Console.ReadLine();
+        //         continue;
+        //     }
+
+        //     switch (choice)
+        //     {
+        //         case 1:
+        //             AddTask();
+        //             break;
+        //         case 2:
+        //             ViewTask();
+        //             break;
+        //         case 3:
+        //             CompleteTask();
+        //             break;
+        //         case 4:
+        //             RemoveTask();
+        //             break;
+        //         default:
+        //             break;
+        //     }
+        // }
+
+        string Prompt = "Welcome to this program. Choose your option!";
+        string[] Options = { "Add Task", "View Tasks", "Complete Task", "Delete Task", "Exit" };
+
+        Menu MainMenu = new(Prompt, Options);
+        int SelectedOption = MainMenu.Run();
+
+        switch (SelectedOption)
         {
-            Console.Clear();
-            Console.WriteLine("=== Todo List ===");
-            Console.WriteLine("1. Add Task");
-            Console.WriteLine("2. View Tasks");
-            Console.WriteLine("3. Complete Task");
-            Console.WriteLine("4. Delete Task");
-            Console.WriteLine("5. Exit");
-
-            string userInput = Console.ReadLine()!.Trim();
-
-            if (!int.TryParse(userInput, out choice))
-            {
-                Console.WriteLine("Invalid Input. Try Again");
-                Console.ReadLine();
-                continue;
-            }
-
-            switch (choice)
-            {
-                case 1:
-                    AddTask();
-                    break;
-                case 2:
-                    ViewTask();
-                    break;
-                case 3:
-                    CompleteTask();
-                    break;
-                case 4:
-                    RemoveTask();
-                    break;
-                default:
-                    break;
-            }
+            case 0:
+                AddTask();
+                break;
+            case 1:
+                ViewTask();
+                break;
+            case 2:
+                CompleteTask();
+                break;
+            case 3:
+                RemoveTask();
+                break;
+            default:
+                Environment.Exit(0);
+                break;
         }
+
     }
 
     public static void AddTask()
@@ -50,9 +76,9 @@ public static class TodoScreen
         TodoTask Task = CreateTask();
         TodoManger.AddTask(Task);
         Console.WriteLine("Succesfully Added Task");
-        Console.ReadLine();
-
-        return;
+        Console.Write("\nPress any key to return to the menu.");
+        Console.ReadKey(true);
+        Start();
     }
     public static TodoTask CreateTask()
     {
@@ -86,95 +112,94 @@ public static class TodoScreen
     {
         Console.Clear();
 
-        ListTaks();
-        TodoTask Task = SelectTask();
+        string Prompt = "Use arrow keys to navigate tasks";
+        string[] TaskOptions = TodoManger.CreateTaskArray();
 
-        if (Task is null)
+        if (TaskOptions.Length == 0)
         {
-            Console.WriteLine("No Tasks");
-            Console.ReadLine();
-            return;
+            Console.WriteLine(Prompt);
+            Console.WriteLine("\nNo Tasks");
+            Console.Write("\nPress any key to return to the menu.");
+            Console.ReadKey(true);
+            Start();
         }
+
+        Menu TaskMenu = new(Prompt, TaskOptions);
+        int SelectedTask = TaskMenu.Run();
+
+        TodoTask Task = TodoManger.GetTask(SelectedTask);
 
         TodoManger.CompleteTask(Task);
         Console.WriteLine("Succesfully Completed Task");
-        return;
+        Console.Write("\nPress any key to return to the menu.");
+        Console.ReadKey(true);
+        Start();
 
     }
     public static void RemoveTask()
     {
         Console.Clear();
 
-        ListTaks();
-        TodoTask Task = SelectTask();
+        string Prompt = "Use arrow keys to navigate tasks";
+        string[] TaskOptions = TodoManger.CreateTaskArray();
 
-        if (Task is null)
+        if (TaskOptions.Length == 0)
         {
-            Console.WriteLine("No Tasks");
-            Console.ReadLine();
-            return;
+            Console.WriteLine(Prompt);
+            Console.WriteLine("\nNo Tasks");
+            Console.Write("\nPress any key to return to the menu.");
+            Console.ReadKey(true);
+            Start();
         }
+
+        Menu TaskMenu = new(Prompt, TaskOptions);
+        int SelectedTask = TaskMenu.Run();
+
+        TodoTask Task = TodoManger.GetTask(SelectedTask);
+
 
         if (TodoManger.RemoveTask(Task))
         {
             Console.WriteLine("Succesfully Removed Task.");
-            Console.ReadLine();
-            return;
+            Console.Write("\nPress any key to return to the menu.");
+            Console.ReadKey(true);
+            Start();
         }
         else
         {
             Console.WriteLine("Task Not Found.");
-            Console.ReadLine();
-            return;
+            Console.Write("\nPress any key to return to the menu.");
+            Console.ReadKey(true);
+            Start();
         }
     }
     public static void ViewTask()
     {
         Console.Clear();
 
-        ListTaks();
-        TodoTask Task = SelectTask();
+        string Prompt = "Use arrow keys to navigate tasks";
+        string[] TaskOptions = TodoManger.CreateTaskArray();
 
-        if (Task is null)
+        if (TaskOptions.Length == 0)
         {
-            Console.WriteLine("No Tasks");
-            Console.ReadLine();
-            return;
+            Console.WriteLine(Prompt);
+            Console.WriteLine("\nNo Tasks");
+            Console.Write("\nPress any key to return to the menu.");
+            Console.ReadKey(true);
+            Start();
         }
+
+        Menu TaskMenu = new(Prompt, TaskOptions);
+        int SelectedTask = TaskMenu.Run();
+
+        TodoTask Task = TodoManger.GetTask(SelectedTask);
+
 
         Console.Clear();
         Console.WriteLine(Task.ToString());
-        Console.ReadLine();
-        return;
+        Console.Write("\nPress any key to return to the menu.");
+        Console.ReadKey(true);
+        Start();
     }
 
-    public static void ListTaks()
-    {
-        if (TodoManger.Tasks.Count == 0)
-        {
-            Console.WriteLine("No Tasks Found. Create one at 'Add Task'");
-        }
-
-        for (int index = 0; index < TodoManger.Tasks.Count; index++)
-        {
-            Console.WriteLine($"{index + 1}. {TodoManger.Tasks[index].Title}");
-        }
-    }
-
-    public static TodoTask SelectTask()
-    {
-        Console.WriteLine("Input Task: ");
-        string choice = Console.ReadLine()!.Trim();
-        int index;
-
-        while (!int.TryParse(choice, out index))
-        {
-            Console.WriteLine("Invalid Input. Try Again");
-            choice = Console.ReadLine()!.Trim();
-        }
-
-        TodoTask Task = TodoManger.GetTask(index - 1);
-
-        return Task;
-    }
 }
