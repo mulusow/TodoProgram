@@ -2,45 +2,7 @@ public static class TodoScreen
 {
     public static void Start()
     {
-        // int choice = 0;
-
-        // while (choice != 5)
-        // {
-        //     Console.Clear();
-        //     Console.WriteLine("=== Todo List ===");
-        //     Console.WriteLine("1. Add Task");
-        //     Console.WriteLine("2. View Tasks");
-        //     Console.WriteLine("3. Complete Task");
-        //     Console.WriteLine("4. Delete Task");
-        //     Console.WriteLine("5. Exit");
-
-        //     string userInput = Console.ReadLine()!.Trim();
-
-        //     if (!int.TryParse(userInput, out choice))
-        //     {
-        //         Console.WriteLine("Invalid Input. Try Again");
-        //         Console.ReadLine();
-        //         continue;
-        //     }
-
-        //     switch (choice)
-        //     {
-        //         case 1:
-        //             AddTask();
-        //             break;
-        //         case 2:
-        //             ViewTask();
-        //             break;
-        //         case 3:
-        //             CompleteTask();
-        //             break;
-        //         case 4:
-        //             RemoveTask();
-        //             break;
-        //         default:
-        //             break;
-        //     }
-        // }
+        Access.LoadTasks();
 
         string Prompt = "Welcome to this program. Choose your option!";
         string[] Options = { "Add Task", "View Tasks", "Complete Task", "Delete Task", "Exit" };
@@ -74,7 +36,7 @@ public static class TodoScreen
         Console.Clear();
 
         TodoTask Task = CreateTask();
-        TodoManger.AddTask(Task);
+        TodoManager.AddTask(Task);
         Console.WriteLine("Succesfully Added Task");
         Console.Write("\nPress any key to return to the menu.");
         Console.ReadKey(true);
@@ -103,7 +65,7 @@ public static class TodoScreen
         bool IsCompleted = false;
         DateTime CreatedDate = DateTime.Now;
 
-        TodoTask Task = TodoManger.CreatingTask(Title, Description, IsCompleted, CreatedDate);
+        TodoTask Task = TodoManager.CreatingTask(Title, Description, IsCompleted, CreatedDate);
         return Task;
 
     }
@@ -113,7 +75,7 @@ public static class TodoScreen
         Console.Clear();
 
         string Prompt = "Use arrow keys to navigate tasks";
-        string[] TaskOptions = TodoManger.CreateTaskArray();
+        string[] TaskOptions = TodoManager.CreateTaskArray();
 
         if (TaskOptions.Length == 0)
         {
@@ -127,9 +89,9 @@ public static class TodoScreen
         Menu TaskMenu = new(Prompt, TaskOptions);
         int SelectedTask = TaskMenu.Run();
 
-        TodoTask Task = TodoManger.GetTask(SelectedTask);
+        TodoTask Task = TodoManager.GetTask(SelectedTask);
 
-        TodoManger.CompleteTask(Task);
+        TodoManager.CompleteTask(Task);
         Console.WriteLine("Succesfully Completed Task");
         Console.Write("\nPress any key to return to the menu.");
         Console.ReadKey(true);
@@ -141,7 +103,7 @@ public static class TodoScreen
         Console.Clear();
 
         string Prompt = "Use arrow keys to navigate tasks";
-        string[] TaskOptions = TodoManger.CreateTaskArray();
+        string[] TaskOptions = TodoManager.CreateTaskArray();
 
         if (TaskOptions.Length == 0)
         {
@@ -155,10 +117,10 @@ public static class TodoScreen
         Menu TaskMenu = new(Prompt, TaskOptions);
         int SelectedTask = TaskMenu.Run();
 
-        TodoTask Task = TodoManger.GetTask(SelectedTask);
+        TodoTask Task = TodoManager.GetTask(SelectedTask);
 
 
-        if (TodoManger.RemoveTask(Task))
+        if (TodoManager.RemoveTask(Task))
         {
             Console.WriteLine("Succesfully Removed Task.");
             Console.Write("\nPress any key to return to the menu.");
@@ -178,7 +140,7 @@ public static class TodoScreen
         Console.Clear();
 
         string Prompt = "Use arrow keys to navigate tasks";
-        string[] TaskOptions = TodoManger.CreateTaskArray();
+        string[] TaskOptions = TodoManager.CreateTaskArray();
 
         if (TaskOptions.Length == 0)
         {
@@ -192,7 +154,7 @@ public static class TodoScreen
         Menu TaskMenu = new(Prompt, TaskOptions);
         int SelectedTask = TaskMenu.Run();
 
-        TodoTask Task = TodoManger.GetTask(SelectedTask);
+        TodoTask Task = TodoManager.GetTask(SelectedTask);
 
 
         Console.Clear();

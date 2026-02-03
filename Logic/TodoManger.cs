@@ -1,10 +1,10 @@
-public static class TodoManger
+public static class TodoManager
 {
     public static List<TodoTask> Tasks = new();
 
     public static TodoTask CreatingTask(string title, string description, bool isCompleted, DateTime createdDate)
     {
-        int Id = Tasks.Count + 1;
+        int Id = Tasks.Any() ? Tasks.Max(x => x.Id) + 1 : 1;
         string Date = createdDate.ToString("dd/mm/yyyy");
         TodoTask Task = new(Id, title, description, isCompleted, Date);
         return Task;
@@ -13,6 +13,7 @@ public static class TodoManger
     public static void AddTask(TodoTask task)
     {
         Tasks.Add(task);
+        Access.SaveTasks();
     }
 
     public static bool RemoveTask(TodoTask task)
@@ -28,6 +29,8 @@ public static class TodoManger
         }
 
         Tasks.Remove(task);
+        Access.SaveTasks();
+
         return true;
     }
 
@@ -50,6 +53,7 @@ public static class TodoManger
                 t.IsCompleted = true;
             }
         }
+        Access.SaveTasks();
     }
 
     public static TodoTask GetTask(int i)
@@ -59,11 +63,11 @@ public static class TodoManger
             return null!;
         }
 
-        for (int index = 0; index < TodoManger.Tasks.Count; index++)
+        for (int index = 0; index < TodoManager.Tasks.Count; index++)
         {
             if (index == i)
             {
-                return TodoManger.Tasks[index];
+                return TodoManager.Tasks[index];
             }
         }
 
@@ -72,11 +76,11 @@ public static class TodoManger
 
     public static string[] CreateTaskArray()
     {
-        string[] TaskOptions = new string[TodoManger.Tasks.Count];
+        string[] TaskOptions = new string[TodoManager.Tasks.Count];
 
-        for (int index = 0; index < TodoManger.Tasks.Count; index++)
+        for (int index = 0; index < TodoManager.Tasks.Count; index++)
         {
-            TaskOptions[index] = TodoManger.Tasks[index].Title;
+            TaskOptions[index] = TodoManager.Tasks[index].Title;
         }
 
         return TaskOptions;

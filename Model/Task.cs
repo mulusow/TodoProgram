@@ -6,6 +6,10 @@ public class TodoTask
     public bool IsCompleted { get; set; }
     public string CreatedDate { get; set; }
 
+    public TodoTask()
+    {
+
+    }
     public TodoTask(string title, string description, bool isCompleted, string createdDate)
     {
         Title = title;

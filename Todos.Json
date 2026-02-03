@@ -1,0 +1,23 @@
+[
+  {
+    "Id": 1,
+    "Title": "Cleaning Bedroom",
+    "Description": "I have to Clean my bedroom before i sleep",
+    "IsCompleted": true,
+    "CreatedDate": "03/06/2026"
+  },
+  {
+    "Id": 3,
+    "Title": "Study",
+    "Description": "I got an endterm on friday",
+    "IsCompleted": false,
+    "CreatedDate": "03/06/2026"
+  },
+  {
+    "Id": 4,
+    "Title": "Groceries",
+    "Description": "I have to do the groceries when i come home",
+    "IsCompleted": false,
+    "CreatedDate": "03/06/2026"
+  }
+]
