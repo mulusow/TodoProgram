@@ -10,6 +10,12 @@ public class Menu
         _prompt = prompt;
     }
 
+    public Menu(string[] options)
+    {
+        _options = options;
+        _prompt = "";
+    }
+
     private void DisplayOptions()
     {
         Console.Clear();
@@ -23,13 +29,13 @@ public class Menu
 
             if (i == _selectedIndex)
             {
-                prefix = ">";
+                prefix = "[>]";
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.BackgroundColor = ConsoleColor.White;
             }
             else
             {
-                prefix = " ";
+                prefix = "[ ]";
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.BackgroundColor = ConsoleColor.Black;
             }
@@ -49,6 +55,11 @@ public class Menu
             ConsoleKeyInfo KeyInfo = Console.ReadKey(true);
             KeyPressed = KeyInfo.Key;
 
+            if (KeyPressed == ConsoleKey.Backspace)
+            {
+                _selectedIndex = -1;
+                return _selectedIndex;
+            }
             if (KeyPressed == ConsoleKey.UpArrow)
             {
                 _selectedIndex--;

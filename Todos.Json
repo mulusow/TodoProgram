@@ -1,23 +1,177 @@
 [
   {
     "Id": 1,
-    "Title": "Cleaning Bedroom",
-    "Description": "I have to Clean my bedroom before i sleep",
+    "Title": "Cleaning Room",
+    "Description": "Cleaning my room before bed.",
     "IsCompleted": true,
-    "CreatedDate": "03/06/2026"
+    "CreatedDate": "04/01/2026"
+  },
+  {
+    "Id": 2,
+    "Title": "Laundry",
+    "Description": "Need to do the laundry before i go out.",
+    "IsCompleted": true,
+    "CreatedDate": "04/02/2026"
   },
   {
     "Id": 3,
-    "Title": "Study",
-    "Description": "I got an endterm on friday",
+    "Title": "Homework",
+    "Description": "I have a deadline coming up on friday.",
     "IsCompleted": false,
-    "CreatedDate": "03/06/2026"
+    "CreatedDate": "04/03/2026"
   },
   {
     "Id": 4,
-    "Title": "Groceries",
-    "Description": "I have to do the groceries when i come home",
+    "Title": "Study",
+    "Description": "I have an endterm coming up i have to study ASAP..",
     "IsCompleted": false,
-    "CreatedDate": "03/06/2026"
+    "CreatedDate": "04/04/2026"
+  },
+  {
+    "Id": 5,
+    "Title": "Grocery Shopping",
+    "Description": "Buy milk, eggs, bread, and vegetables.",
+    "IsCompleted": false,
+    "CreatedDate": "04/04/2026"
+  },
+  {
+    "Id": 6,
+    "Title": "Call Mom",
+    "Description": "Check in with mom about weekend plans.",
+    "IsCompleted": false,
+    "CreatedDate": "04/03/2026"
+  },
+  {
+    "Id": 7,
+    "Title": "Fix Bike",
+    "Description": "The chain keeps falling off, needs repair.",
+    "IsCompleted": false,
+    "CreatedDate": "04/01/2026"
+  },
+  {
+    "Id": 8,
+    "Title": "Read Chapter 5",
+    "Description": "Finish reading chapter 5 for literature class.",
+    "IsCompleted": true,
+    "CreatedDate": "04/02/2026"
+  },
+  {
+    "Id": 9,
+    "Title": "Gym Workout",
+    "Description": "Leg day - squats and deadlifts.",
+    "IsCompleted": true,
+    "CreatedDate": "04/03/2026"
+  },
+  {
+    "Id": 10,
+    "Title": "Pay Bills",
+    "Description": "Pay electricity and internet bills before the 15th.",
+    "IsCompleted": false,
+    "CreatedDate": "04/05/2026"
+  },
+  {
+    "Id": 11,
+    "Title": "Water Plants",
+    "Description": "The succulents are looking dry.",
+    "IsCompleted": false,
+    "CreatedDate": "04/04/2026"
+  },
+  {
+    "Id": 12,
+    "Title": "Practice Guitar",
+    "Description": "Work on the new song for 30 minutes.",
+    "IsCompleted": false,
+    "CreatedDate": "04/03/2026"
+  },
+  {
+    "Id": 13,
+    "Title": "Dentist Appointment",
+    "Description": "Cleaning appointment at 2 PM on Thursday.",
+    "IsCompleted": false,
+    "CreatedDate": "04/02/2026"
+  },
+  {
+    "Id": 14,
+    "Title": "Organize Desk",
+    "Description": "Too much clutter, need to clean it up.",
+    "IsCompleted": true,
+    "CreatedDate": "04/01/2026"
+  },
+  {
+    "Id": 15,
+    "Title": "Meal Prep Sunday",
+    "Description": "Prepare lunches for the week.",
+    "IsCompleted": false,
+    "CreatedDate": "04/05/2026"
+  },
+  {
+    "Id": 16,
+    "Title": "Update Resume",
+    "Description": "Add recent projects and skills.",
+    "IsCompleted": false,
+    "CreatedDate": "04/04/2026"
+  },
+  {
+    "Id": 17,
+    "Title": "Clean Car",
+    "Description": "Vacuum interior and wash exterior.",
+    "IsCompleted": false,
+    "CreatedDate": "04/03/2026"
+  },
+  {
+    "Id": 18,
+    "Title": "Birthday Gift for Sarah",
+    "Description": "Her birthday is next week, need to buy something.",
+    "IsCompleted": false,
+    "CreatedDate": "04/02/2026"
+  },
+  {
+    "Id": 19,
+    "Title": "Backup Computer Files",
+    "Description": "Haven't backed up in months, do it today.",
+    "IsCompleted": false,
+    "CreatedDate": "04/05/2026"
+  },
+  {
+    "Id": 20,
+    "Title": "Write Blog Post",
+    "Description": "Finish the draft about C# learning journey.",
+    "IsCompleted": false,
+    "CreatedDate": "04/04/2026"
+  },
+  {
+    "Id": 21,
+    "Title": "Oil Change",
+    "Description": "Car is due for maintenance at 50k miles.",
+    "IsCompleted": true,
+    "CreatedDate": "04/01/2026"
+  },
+  {
+    "Id": 22,
+    "Title": "Learn LINQ",
+    "Description": "Watch tutorial videos on LINQ queries.",
+    "IsCompleted": false,
+    "CreatedDate": "04/05/2026"
+  },
+  {
+    "Id": 23,
+    "Title": "Return Library Books",
+    "Description": "Due date is tomorrow!",
+    "IsCompleted": false,
+    "CreatedDate": "04/04/2026"
+  },
+  {
+    "Id": 24,
+    "Title": "Team Meeting Notes",
+    "Description": "Review and organize notes from yesterday's meeting.",
+    "IsCompleted": true,
+    "CreatedDate": "04/03/2026"
+  },
+  {
+    "Id": 25,
+    "Title": "Plan Weekend Trip",
+    "Description": "Research camping spots and book a site.",
+    "IsCompleted": false,
+    "CreatedDate": "04/02/2026"
   }
 ]
