@@ -63,35 +63,6 @@ public static class TodoScreen
         return Task;
 
     }
-
-    // public static void CompleteTask()
-    // {
-    //     Console.Clear();
-
-    //     string Prompt = "Use arrow keys to navigate tasks";
-    //     string[] TaskOptions = TodoManager.CreateTaskArray();
-
-    //     if (TaskOptions.Length == 0)
-    //     {
-    //         Console.WriteLine(Prompt);
-    //         Console.WriteLine("\nNo Tasks");
-    //         Console.Write("\nPress any key to return to the menu.");
-    //         Console.ReadKey(true);
-    //         Start();
-    //     }
-
-    //     Menu TaskMenu = new(Prompt, TaskOptions);
-    //     int SelectedTask = TaskMenu.Run();
-
-    //     TodoTask Task = TodoManager.GetTask(SelectedTask);
-
-    //     TodoManager.CompleteTask(Task);
-    //     Console.WriteLine("Succesfully Completed Task");
-    //     Console.Write("\nPress any key to return to the menu.");
-    //     Console.ReadKey(true);
-    //     Start();
-
-    // }
     public static void ViewTask()
     {
         Console.Clear();
